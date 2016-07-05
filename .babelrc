@@ -1,0 +1,6 @@
+/**
+ * Created by AllenFeng on 2016/7/4.
+ */
+{
+    "presets": ["es2015","react"]
+}
