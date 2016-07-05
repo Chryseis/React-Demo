@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "166438155975ac30cef7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "48b3e991babcb1c40dd7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -586,7 +586,7 @@
 	__webpack_require__(1);
 	__webpack_require__(74);
 	__webpack_require__(76);
-	module.exports = __webpack_require__(81);
+	(function webpackMissingModule() { throw new Error("Cannot find module \"./styles/main.scss\""); }());
 
 
 /***/ },
@@ -24680,11 +24680,11 @@
 	        value: function render() {
 	            return React.createElement(
 	                "div",
-	                { "class": "red" },
+	                { className: "red" },
 	                "Hello",
 	                React.createElement(
 	                    "div",
-	                    { "class": "big" },
+	                    { className: "big" },
 	                    "World"
 	                )
 	            );
@@ -24696,12 +24696,6 @@
 	
 	exports.default = Hello;
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)))
-
-/***/ },
-/* 81 */
-/***/ function(module, exports) {
-
-	// removed by extract-text-webpack-plugin
 
 /***/ }
 /******/ ]);

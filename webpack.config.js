@@ -11,7 +11,7 @@ module.exports = {
         'webpack-dev-server/client?http://127.0.0.1:3000', // WebpackDevServer host and port
         'webpack/hot/only-dev-server',
         './app/main.js',
-        './css/main.scss'
+        './styles/main.scss'
     ],
     output: {
         path: __dirname + '/assets/',
@@ -28,10 +28,7 @@ module.exports = {
             test: /\.(js|jsx)$/,
             exclude: /node_module/,
             loader: 'babel'
-        }, {
-            test: /\.css$/,
-            loader: "style!css"
-        }, {
+        },{
             test: /\.scss$/,
             loader: ExtractTextPlugin .extract("style", "css!sass?sourceMap")
         }]
