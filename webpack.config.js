@@ -8,7 +8,7 @@ var path = require('path');
 module.exports = {
     devtool: 'source-map',
     entry: [
-        'webpack-dev-server/client?http://127.0.0.1:3000', // WebpackDevServer host and port
+        'webpack-dev-server/client?http://127.0.0.1:8000', // WebpackDevServer host and port
         'webpack/hot/only-dev-server',
         './app/main.js',
         './styles/main.scss'
