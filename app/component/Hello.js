@@ -1,7 +1,7 @@
 /**
  * Created by AllenFeng on 2016/7/4.
  */
-import {ReactClass} from './Demo'
+
 
 export default class Hello extends React.Component {
 
@@ -15,7 +15,7 @@ export default class Hello extends React.Component {
             <div className="big">
                 World
             </div>
-            <ReactClass></ReactClass>
+            {this.props.children}
         </div>
     }
 }

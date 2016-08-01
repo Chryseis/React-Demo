@@ -8,7 +8,6 @@ var config=require('./webpack.config');
 new WebpackDevServer(webpack(config),{
     publicPath:config.output.publicPath,
     hot:true,
-    noInfo:false,
     historyApiFallback:true
 }).listen(8000,'127.0.0.1',function (err,result) {
     if(err){

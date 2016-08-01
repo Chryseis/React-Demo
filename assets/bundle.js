@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1a96e427b64053e7c7d1"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "710b4c85d1fe9cd42215"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -24662,6 +24662,8 @@
 	
 	var _Hello2 = _interopRequireDefault(_Hello);
 	
+	var _Demo = __webpack_require__(144);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -24687,8 +24689,13 @@
 	        value: function render() {
 	            return React.createElement(
 	                _reactRouter.Router,
-	                { history: _reactRouter.hashHistory },
-	                React.createElement(_reactRouter.Route, { path: '/', component: _Hello2.default })
+	                { history: _reactRouter.browserHistory },
+	                React.createElement(
+	                    _reactRouter.Route,
+	                    { path: 'hello', component: _Hello2.default },
+	                    React.createElement(_reactRouter.Route, { path: 'demo', component: _Demo.ReactClass })
+	                ),
+	                React.createElement(_reactRouter.Redirect, { from: '/', to: '/hello' })
 	            );
 	        }
 	    }]);
@@ -30265,16 +30272,15 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _Demo = __webpack_require__(144);
-	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
-	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } /**
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                * Created by AllenFeng on 2016/7/4.
-	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 	
+	/**
+	 * Created by AllenFeng on 2016/7/4.
+	 */
 	
 	var Hello = function (_React$Component) {
 	    _inherits(Hello, _React$Component);
@@ -30297,7 +30303,7 @@
 	                    { className: "big" },
 	                    "World"
 	                ),
-	                React.createElement(_Demo.ReactClass, null)
+	                this.props.children
 	            );
 	        }
 	    }]);
@@ -30312,7 +30318,7 @@
 /* 144 */
 /***/ function(module, exports, __webpack_require__) {
 
-	/* WEBPACK VAR INJECTION */(function(React) {"use strict";
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -30322,15 +30328,26 @@
 	 */
 	
 	var ReactClass = exports.ReactClass = React.createClass({
-	    displayName: "ReactClass",
+	    displayName: 'ReactClass',
 	    render: function render() {
 	        return React.createElement(
-	            "div",
+	            'div',
 	            null,
-	            "Hi,Easy"
+	            'Hi,Easy',
+	            this.xixi()
 	        );
-	    }
+	    },
+	    xixi: function xixi() {
+	        return '456462132ssssss131231hahaa2312313125dsadsa1ssss23132dxixixixasdasd1dassssssdssssssad456465';
+	    },
+	    haha: function haha() {}
 	});
+	
+	var aa = {
+	    haha: function haha() {
+	        return 1123123123122222323;
+	    }
+	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)))
 
 /***/ },
