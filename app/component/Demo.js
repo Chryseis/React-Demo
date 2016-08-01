@@ -8,15 +8,12 @@ export const ReactClass=React.createClass({
         return <div>Hi,Easy{this.xixi()}</div>
     },
     xixi(){
-       return '456462132ssssss131231hahaa2312313125dsadsa1ssss23132dxixixixasdasd1dassssssdssssssad456465';
-    },
-    haha(){
-
+       return '3333333';
     }
 })
 
 const aa={
     haha(){
-        return 1123123123122222323
+        return 11231231231222222222323
     }
 }

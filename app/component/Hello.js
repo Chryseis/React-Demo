@@ -13,7 +13,7 @@ export default class Hello extends React.Component {
         return <div className="red">
             Hello
             <div className="big">
-                World
+                World 1212222
             </div>
             {this.props.children}
         </div>

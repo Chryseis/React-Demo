@@ -6,7 +6,6 @@ var ExtractTextPlugin  = require('extract-text-webpack-plugin');
 var path = require('path');
 
 module.exports = {
-    watch: true,
     devtool: 'source-map',
     entry: [
         'webpack-dev-server/client?http://127.0.0.1:8000', // WebpackDevServer host and port
@@ -15,7 +14,7 @@ module.exports = {
         './styles/main.scss'
     ],
     output: {
-        path: __dirname + '/assets/',
+        path: "/assets/",
         publicPath: "/assets/",
         filename: 'bundle.js'
     },

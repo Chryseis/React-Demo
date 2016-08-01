@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "710b4c85d1fe9cd42215"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "9110cd8f45f83ceda42f"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30301,7 +30301,7 @@
 	                React.createElement(
 	                    "div",
 	                    { className: "big" },
-	                    "World"
+	                    "World 1212222"
 	                ),
 	                this.props.children
 	            );
@@ -30338,14 +30338,13 @@
 	        );
 	    },
 	    xixi: function xixi() {
-	        return '456462132ssssss131231hahaa2312313125dsadsa1ssss23132dxixixixasdasd1dassssssdssssssad456465';
-	    },
-	    haha: function haha() {}
+	        return '3333333';
+	    }
 	});
 	
 	var aa = {
 	    haha: function haha() {
-	        return 1123123123122222323;
+	        return 11231231231222222222323;
 	    }
 	};
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(78)))
