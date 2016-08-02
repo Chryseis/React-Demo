@@ -14,13 +14,13 @@ gulp.task('default',function () {
 
 gulp.task('watch',function () {
     gulp.watch('app/component/*.js',['webpack'])
-})
+});
 
 gulp.task('webpack',function () {
     return gulp.src('app/main.js')
         .pipe(webpackStream(config))
         .pipe(gulp.dest('assets/'))
-})
+});
 
 gulp.task('webpack-dev-server',function () {
     new webpackDevServer(webpack(config),{
@@ -33,4 +33,4 @@ gulp.task('webpack-dev-server',function () {
         }
         console.log('Listening at localhost:8000')
     })
-})
+});
