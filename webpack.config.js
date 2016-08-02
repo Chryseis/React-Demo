@@ -21,12 +21,12 @@ module.exports = {
     module: {
         preLoaders: [{
             test: /\.(js|jsx)$/,
-            exclude: /node_module/,
+            exclude: /node_modules/,
             loader: 'eslint'
         }],
         loaders: [{
             test: /\.(js|jsx)$/,
-            exclude: /node_module/,
+            exclude: /node_modules/,
             loader: 'babel'
         },{
             test: /\.scss$/,

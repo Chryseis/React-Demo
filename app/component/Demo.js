@@ -8,12 +8,12 @@ export const ReactClass=React.createClass({
         return <div>Hi,Easy{this.xixi()}</div>
     },
     xixi(){
-       return '999';
+       return '7777777777';
     }
-})
+});
 
 const aa={
     haha(){
         return 11231231231222222222323
     }
-}
+};
