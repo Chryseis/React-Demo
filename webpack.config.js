@@ -10,8 +10,8 @@ module.exports = {
     entry: [
         'webpack-dev-server/client?http://127.0.0.1:8000', // WebpackDevServer host and port
         'webpack/hot/only-dev-server',
-        './app/main.js',
-        './styles/main.scss'
+        './src/app/main.js',
+        './src/styles/main.scss'
     ],
     output: {
         path: "/assets/",

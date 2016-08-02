@@ -9,22 +9,22 @@ var gulp=require('gulp'),
     config=require('./webpack.config');
 
 gulp.task('default',function () {
-        gulp.run('webpack-dev-server','watch');
+   gulp.run('webpack-dev-server','watch');
 });
 
 gulp.task('watch',function () {
-    gulp.watch('app/component/*.js',['webpack'])
+    gulp.watch('src/**/*.**',['webpack']);
 });
 
 gulp.task('webpack',function () {
-    return gulp.src('app/main.js')
+    return gulp.src('src/app/main.js')
         .pipe(webpackStream(config))
         .pipe(gulp.dest('assets/'))
 });
 
 gulp.task('webpack-dev-server',function () {
     new webpackDevServer(webpack(config),{
-        publicPath:config.output.path,
+        publicPath:config.output.publicPath,
         historyApiFallback:true,
         inline:true
     }).listen(8000,'127.0.0.1',function (err,result) {

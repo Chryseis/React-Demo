@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "f89b989906b4f879ae3f"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "678dd49e9804ea97a182"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -30301,7 +30301,7 @@
 	                React.createElement(
 	                    "div",
 	                    { className: "big" },
-	                    "World 1212222"
+	                    "World"
 	                ),
 	                this.props.children
 	            );
@@ -30338,7 +30338,7 @@
 	        );
 	    },
 	    xixi: function xixi() {
-	        return '7777777777';
+	        return '7777';
 	    }
 	});
 	
