@@ -8,7 +8,7 @@ export const ReactClass=React.createClass({
         return <div>Hi,Easy{this.xixi()}</div>
     },
     xixi(){
-       return '7777';
+       return '7222777';
     }
 });
 
