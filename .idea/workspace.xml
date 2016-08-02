@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b003c43a-4dcd-4dd8-a4cf-c0ebceb82ec1" name="Default" comment="webpack-react 0.0.1">
+    <list default="true" id="b003c43a-4dcd-4dd8-a4cf-c0ebceb82ec1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bundle.js" afterPath="$PROJECT_DIR$/assets/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bundle.js.map" afterPath="$PROJECT_DIR$/assets/bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/component/Demo.js" afterPath="$PROJECT_DIR$/src/app/component/Demo.js" />
     </list>
     <ignored path="React-Webpack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -350,7 +347,7 @@
       <workItem from="1470029924267" duration="2564000" />
       <workItem from="1470034576001" duration="11236000" />
       <workItem from="1470047053793" duration="1531000" />
-      <workItem from="1470104382031" duration="15925000" />
+      <workItem from="1470104382031" duration="16121000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1467711662209</created>
@@ -450,11 +447,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470129305144</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="webpack-react 0.0.1">
+      <created>1470129516011</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1470129516011</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147132000" />
+    <option name="totallyTimeSpent" value="147328000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
