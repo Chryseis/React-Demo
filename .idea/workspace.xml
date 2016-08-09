@@ -2,73 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b003c43a-4dcd-4dd8-a4cf-c0ebceb82ec1" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/component/dnd/Card.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/component/dnd/Container.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/component/dnd/ItemTypes.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/app/component/dnd/index.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lodash._baseclone/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lodash._baseclone/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lodash._baseclone/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/lodash._baseclone/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/pkg-conf/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/pkg-conf/license" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/pkg-conf/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/pkg-conf/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/camelcase/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/camelcase/license" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/camelcase/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/camelcase/readme.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/set-blocking/CHANGELOG.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/set-blocking/LICENSE.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/set-blocking/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/set-blocking/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/set-blocking/package.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/symbol/LICENSE" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/symbol/README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/symbol/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/node_modules/symbol/package.json" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/vendor/win32-x64-47/binding.node" afterPath="$PROJECT_DIR$/node_modules/node-sass/vendor/win32-x64-47/binding.node" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.babelrc" afterPath="$PROJECT_DIR$/.babelrc" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bundle.js" afterPath="$PROJECT_DIR$/assets/bundle.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/bundle.js.map" afterPath="$PROJECT_DIR$/assets/bundle.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/async-foreach/package.json" afterPath="$PROJECT_DIR$/node_modules/async-foreach/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/invert-kv/package.json" afterPath="$PROJECT_DIR$/node_modules/invert-kv/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/lcid/package.json" afterPath="$PROJECT_DIR$/node_modules/lcid/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/lodash.clonedeep/LICENSE" afterPath="$PROJECT_DIR$/node_modules/lodash.clonedeep/LICENSE" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/lodash.clonedeep/README.md" afterPath="$PROJECT_DIR$/node_modules/lodash.clonedeep/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/lodash.clonedeep/index.js" afterPath="$PROJECT_DIR$/node_modules/lodash.clonedeep/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/lodash.clonedeep/package.json" afterPath="$PROJECT_DIR$/node_modules/lodash.clonedeep/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/lru-cache/package.json" afterPath="$PROJECT_DIR$/node_modules/lru-cache/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nan/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/nan/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nan/README.md" afterPath="$PROJECT_DIR$/node_modules/nan/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nan/doc/asyncworker.md" afterPath="$PROJECT_DIR$/node_modules/nan/doc/asyncworker.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nan/doc/callback.md" afterPath="$PROJECT_DIR$/node_modules/nan/doc/callback.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nan/nan.h" afterPath="$PROJECT_DIR$/node_modules/nan/nan.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nan/nan_persistent_pre_12_inl.h" afterPath="$PROJECT_DIR$/node_modules/nan/nan_persistent_pre_12_inl.h" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/nan/package.json" afterPath="$PROJECT_DIR$/node_modules/nan/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/node-sass/package.json" afterPath="$PROJECT_DIR$/node_modules/node-sass/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/os-locale/package.json" afterPath="$PROJECT_DIR$/node_modules/os-locale/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/pseudomap/package.json" afterPath="$PROJECT_DIR$/node_modules/pseudomap/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/window-size/package.json" afterPath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/window-size/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/README.md" afterPath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/README.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/lib/command.js" afterPath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/lib/command.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/lib/validation.js" afterPath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/lib/validation.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/package.json" afterPath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/yargs.js" afterPath="$PROJECT_DIR$/node_modules/sass-graph/node_modules/yargs/yargs.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/sass-graph/package.json" afterPath="$PROJECT_DIR$/node_modules/sass-graph/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/yallist/package.json" afterPath="$PROJECT_DIR$/node_modules/yallist/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/yargs-parser/CHANGELOG.md" afterPath="$PROJECT_DIR$/node_modules/yargs-parser/CHANGELOG.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/yargs-parser/index.js" afterPath="$PROJECT_DIR$/node_modules/yargs-parser/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/yargs-parser/node_modules/camelcase/index.js" afterPath="$PROJECT_DIR$/node_modules/yargs-parser/node_modules/camelcase/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/yargs-parser/node_modules/camelcase/package.json" afterPath="$PROJECT_DIR$/node_modules/yargs-parser/node_modules/camelcase/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/node_modules/yargs-parser/package.json" afterPath="$PROJECT_DIR$/node_modules/yargs-parser/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/component/Demo.js" afterPath="$PROJECT_DIR$/src/app/component/Demo.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main.js" afterPath="$PROJECT_DIR$/src/app/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/styles/main.scss" afterPath="$PROJECT_DIR$/src/styles/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
     </list>
     <ignored path="React-Webpack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -549,7 +483,7 @@
       <workItem from="1470303052450" duration="5164000" />
       <workItem from="1470368355160" duration="3412000" />
       <workItem from="1470619020677" duration="5916000" />
-      <workItem from="1470705407079" duration="257000" />
+      <workItem from="1470705407079" duration="355000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1467711662209</created>
@@ -663,11 +597,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470129655602</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="webpack-react 0.0.1">
+      <created>1470705756012</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1470705756012</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="169839000" />
+    <option name="totallyTimeSpent" value="169937000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
