@@ -35,10 +35,10 @@ module.exports = {
     },
     resolve: {
         extension: ['', '.js', '.jsx'],
-        alias: {
+/*        alias: {
             'react': path.join(__dirname, 'node_modules', 'react/dist/react.min.js'),
-            'react-dom': path.join(__dirname, 'node_modules', 'react-dom/dist/react-dom.min.js')
-        }
+            'reactdom': path.join(__dirname, 'node_modules', 'react-dom/dist/react-dom.min.js')
+        }*/
     },
     plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.ProvidePlugin({
         "React": "react",

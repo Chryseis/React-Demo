@@ -2,5 +2,6 @@
  * Created by AllenFeng on 2016/7/4.
  */
 {
-    "presets": ["es2015","react"]
+    "presets": ["stage-0","es2015","react"],
+    "plugins": ["transform-decorators-legacy","transform-class-properties"]
 }
