@@ -14,8 +14,8 @@ module.exports = {
         './src/styles/main.scss'
     ],
     output: {
-        path: "/assets/",
-        publicPath: "/assets/",
+        path: path.resolve(__dirname, "assets"),
+        publicPath: "/public/",
         filename: 'bundle.js'
     },
     module: {

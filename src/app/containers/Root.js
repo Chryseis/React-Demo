@@ -2,8 +2,8 @@
  * Created by AllenFeng on 2016/7/12.
  */
 import {Router,Route,browserHistory,Redirect} from 'react-router';
-import Hello from '../component/Hello';
-import {ReactClass} from '../component/Demo';
+import Hello from '../components/Hello';
+import {ReactClass} from '../components/Demo';
 
 export default class Root extends React.Component{
     

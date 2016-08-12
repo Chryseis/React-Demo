@@ -26,7 +26,8 @@ gulp.task('webpack-dev-server',function () {
     new webpackDevServer(webpack(config),{
         publicPath:config.output.publicPath,
         historyApiFallback:true,
-        inline:true
+        inline:true,
+        contentBase:'src/'
     }).listen(8000,'127.0.0.1',function (err,result) {
         if(err){
             console.log(err);
