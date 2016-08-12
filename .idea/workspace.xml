@@ -2,21 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b003c43a-4dcd-4dd8-a4cf-c0ebceb82ec1" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/bundle.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/bundle.js.map" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/containers/Root.js" afterPath="$PROJECT_DIR$/src/app/containers/Root.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/app/main.js" afterPath="$PROJECT_DIR$/src/app/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/webpack.config.js" afterPath="$PROJECT_DIR$/webpack.config.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/src/index.html" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/component/Demo.js" afterPath="$PROJECT_DIR$/src/app/components/Demo.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/component/Hello.js" afterPath="$PROJECT_DIR$/src/app/components/Hello.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/component/dnd/Card.js" afterPath="$PROJECT_DIR$/src/app/components/dnd/Card.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/component/dnd/Container.js" afterPath="$PROJECT_DIR$/src/app/components/dnd/Container.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/component/dnd/ItemTypes.js" afterPath="$PROJECT_DIR$/src/app/components/dnd/ItemTypes.js" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/app/component/dnd/index.js" afterPath="$PROJECT_DIR$/src/app/components/dnd/index.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/React-Webpack.iml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dictionaries/AllenFeng.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/libraries/React_Webpack_node_modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/watcherTasks.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="" />
     </list>
     <ignored path="React-Webpack.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -296,20 +289,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="React-Webpack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="React-Webpack" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scratches" />
@@ -437,7 +416,7 @@
       <workItem from="1470964679853" duration="24000" />
       <workItem from="1470967373326" duration="43000" />
       <workItem from="1470967912293" duration="1844000" />
-      <workItem from="1470974369323" duration="3149000" />
+      <workItem from="1470974369323" duration="3350000" />
     </task>
     <task id="LOCAL-00001" summary="ok">
       <created>1467711662209</created>
@@ -565,11 +544,18 @@
       <option name="project" value="LOCAL" />
       <updated>1470705769615</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="webpack-react 0.0.1">
+      <created>1470982330699</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1470982330699</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="185530000" />
+    <option name="totallyTimeSpent" value="185731000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -582,9 +568,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-107" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973656" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32827735" sideWeight="0.5021075" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32792208" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
