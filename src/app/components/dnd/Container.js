@@ -1,10 +1,10 @@
 /**
  * Created by AllenFeng on 2016/8/4.
  */
-import React, { Component, PropTypes } from 'react';
+import React, {Component, PropTypes} from 'react';
 import update from 'react/lib/update';
 import Card from './Card';
-import { DropTarget, DragDropContext } from 'react-dnd';
+import {DropTarget, DragDropContext} from 'react-dnd';
 import HTML5Backend from 'react-dnd-html5-backend';
 import ItemTypes from './ItemTypes';
 
@@ -12,88 +12,77 @@ const style = {
     width: 400
 };
 
-const cardTarget = {
-    drop() {
-    }
-};
+
 
 @DragDropContext(HTML5Backend)
-@DropTarget(ItemTypes.CARD, cardTarget, connect => ({
-    connectDropTarget: connect.dropTarget()
-}))
 export default class Container extends Component {
-    static propTypes = {
-        connectDropTarget: PropTypes.func.isRequired
-    };
 
     constructor(props) {
         super(props);
         this.moveCard = this.moveCard.bind(this);
-        this.findCard = this.findCard.bind(this);
         this.state = {
             cards: [{
                 id: 1,
-                text: 'Write a cool JS library'
+                text: 'Write a cool JS library',
+                children: [{id: 1, text: 'child1'}, {id: 2, text: 'child2'}, {id: 3, text: 'child3'}]
             }, {
                 id: 2,
-                text: 'Make it generic enough'
+                text: 'Make it generic enough',
+                children: [{id: 1, text: 'child1'}, {id: 2, text: 'child2'}, {id: 3, text: 'child3'}]
             }, {
                 id: 3,
-                text: 'Write README'
+                text: 'Write README',
+                children: [{id: 1, text: 'child1'}, {id: 2, text: 'child2'}, {id: 3, text: 'child3'}]
             }, {
                 id: 4,
-                text: 'Create some examples'
+                text: 'Create some examples',
+                children: [{id: 1, text: 'child1'}, {id: 2, text: 'child2'}, {id: 3, text: 'child3'}]
             }, {
                 id: 5,
-                text: 'Spam in Twitter and IRC to promote it'
+                text: 'Spam in Twitter and IRC to promote it',
+                children: [{id: 1, text: 'child1'}, {id: 2, text: 'child2'}, {id: 3, text: 'child3'}]
             }, {
                 id: 6,
-                text: '???'
+                text: '???',
+                children: [{id: 1, text: 'child1'}, {id: 2, text: 'child2'}, {id: 3, text: 'child3'}]
             }, {
                 id: 7,
-                text: 'PROFIT'
+                text: 'PROFIT',
+                children: [{id: 1, text: 'child1'}, {id: 2, text: 'child2'}, {id: 3, text: 'child3'}]
             }]
         };
     }
 
-    moveCard(id, atIndex) {
-        const { card, index } = this.findCard(id);
+    moveCard(dragIndex, hoverIndex) {
+        const { cards } = this.state;
+        const dragCard = cards[dragIndex];
+
         this.setState(update(this.state, {
             cards: {
                 $splice: [
-                    [index, 1],
-                    [atIndex, 0, card]
+                    [dragIndex, 1],
+                    [hoverIndex, 0, dragCard]
                 ]
             }
         }));
     }
 
-    findCard(id) {
-        const { cards } = this.state;
-        const card = cards.filter(c => c.id === id)[0];
-
-        return {
-            card,
-            index: cards.indexOf(card)
-        };
-    }
-
     render() {
-        const { connectDropTarget } = this.props;
-        const { cards } = this.state;
+        const {connectDropTarget} = this.props;
+        const {cards} = this.state;
 
-        return connectDropTarget(
-            <div style={style}>
-                {cards.map(card => {
-                    return (
-                        <Card key={card.id}
-                              id={card.id}
-                              text={card.text}
-                              moveCard={this.moveCard}
-                              findCard={this.findCard} />
-                    );
-                })}
-            </div>
-        );
+        return <div style={style}>
+            {cards.map((card,i) => {
+                return (
+                    <Card key={card.id}
+                          index={i}
+                          id={card.id}
+                          text={card.text}
+                          children={card.children}
+                          moveCard={this.moveCard}/>
+                );
+            })}
+        </div>
+
     }
 }

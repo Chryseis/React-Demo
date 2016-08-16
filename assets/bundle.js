@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e37bd8a3def927341e9b"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "1d61a41eb3df16e5dd2d"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -586,7 +586,7 @@
 	__webpack_require__(1);
 	__webpack_require__(74);
 	__webpack_require__(76);
-	module.exports = __webpack_require__(468);
+	module.exports = __webpack_require__(469);
 
 
 /***/ },
@@ -34803,9 +34803,9 @@
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
-	var _dec, _dec2, _class, _class2, _temp; /**
-	                                          * Created by AllenFeng on 2016/8/4.
-	                                          */
+	var _dec, _class; /**
+	                   * Created by AllenFeng on 2016/8/4.
+	                   */
 	
 	
 	var _react = __webpack_require__(239);
@@ -34822,7 +34822,7 @@
 	
 	var _reactDnd = __webpack_require__(315);
 	
-	var _reactDndHtml5Backend = __webpack_require__(437);
+	var _reactDndHtml5Backend = __webpack_require__(438);
 	
 	var _reactDndHtml5Backend2 = _interopRequireDefault(_reactDndHtml5Backend);
 	
@@ -34842,15 +34842,7 @@
 	    width: 400
 	};
 	
-	var cardTarget = {
-	    drop: function drop() {}
-	};
-	
-	var Container = (_dec = (0, _reactDnd.DragDropContext)(_reactDndHtml5Backend2.default), _dec2 = (0, _reactDnd.DropTarget)(_ItemTypes2.default.CARD, cardTarget, function (connect) {
-	    return {
-	        connectDropTarget: connect.dropTarget()
-	    };
-	}), _dec(_class = _dec2(_class = (_temp = _class2 = function (_Component) {
+	var Container = (_dec = (0, _reactDnd.DragDropContext)(_reactDndHtml5Backend2.default), _dec(_class = function (_Component) {
 	    _inherits(Container, _Component);
 	
 	    function Container(props) {
@@ -34859,29 +34851,35 @@
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Container).call(this, props));
 	
 	        _this.moveCard = _this.moveCard.bind(_this);
-	        _this.findCard = _this.findCard.bind(_this);
 	        _this.state = {
 	            cards: [{
 	                id: 1,
-	                text: 'Write a cool JS library'
+	                text: 'Write a cool JS library',
+	                children: [{ id: 1, text: 'child1' }, { id: 2, text: 'child2' }, { id: 3, text: 'child3' }]
 	            }, {
 	                id: 2,
-	                text: 'Make it generic enough'
+	                text: 'Make it generic enough',
+	                children: [{ id: 1, text: 'child1' }, { id: 2, text: 'child2' }, { id: 3, text: 'child3' }]
 	            }, {
 	                id: 3,
-	                text: 'Write README'
+	                text: 'Write README',
+	                children: [{ id: 1, text: 'child1' }, { id: 2, text: 'child2' }, { id: 3, text: 'child3' }]
 	            }, {
 	                id: 4,
-	                text: 'Create some examples'
+	                text: 'Create some examples',
+	                children: [{ id: 1, text: 'child1' }, { id: 2, text: 'child2' }, { id: 3, text: 'child3' }]
 	            }, {
 	                id: 5,
-	                text: 'Spam in Twitter and IRC to promote it'
+	                text: 'Spam in Twitter and IRC to promote it',
+	                children: [{ id: 1, text: 'child1' }, { id: 2, text: 'child2' }, { id: 3, text: 'child3' }]
 	            }, {
 	                id: 6,
-	                text: '???'
+	                text: '???',
+	                children: [{ id: 1, text: 'child1' }, { id: 2, text: 'child2' }, { id: 3, text: 'child3' }]
 	            }, {
 	                id: 7,
-	                text: 'PROFIT'
+	                text: 'PROFIT',
+	                children: [{ id: 1, text: 'child1' }, { id: 2, text: 'child2' }, { id: 3, text: 'child3' }]
 	            }]
 	        };
 	        return _this;
@@ -34889,31 +34887,16 @@
 	
 	    _createClass(Container, [{
 	        key: 'moveCard',
-	        value: function moveCard(id, atIndex) {
-	            var _findCard = this.findCard(id);
+	        value: function moveCard(dragIndex, hoverIndex) {
+	            var cards = this.state.cards;
 	
-	            var card = _findCard.card;
-	            var index = _findCard.index;
+	            var dragCard = cards[dragIndex];
 	
 	            this.setState((0, _update2.default)(this.state, {
 	                cards: {
-	                    $splice: [[index, 1], [atIndex, 0, card]]
+	                    $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]]
 	                }
 	            }));
-	        }
-	    }, {
-	        key: 'findCard',
-	        value: function findCard(id) {
-	            var cards = this.state.cards;
-	
-	            var card = cards.filter(function (c) {
-	                return c.id === id;
-	            })[0];
-	
-	            return {
-	                card: card,
-	                index: cards.indexOf(card)
-	            };
 	        }
 	    }, {
 	        key: 'render',
@@ -34924,24 +34907,23 @@
 	            var cards = this.state.cards;
 	
 	
-	            return connectDropTarget(_react2.default.createElement(
+	            return _react2.default.createElement(
 	                'div',
 	                { style: style },
-	                cards.map(function (card) {
+	                cards.map(function (card, i) {
 	                    return _react2.default.createElement(_Card2.default, { key: card.id,
+	                        index: i,
 	                        id: card.id,
 	                        text: card.text,
-	                        moveCard: _this2.moveCard,
-	                        findCard: _this2.findCard });
+	                        children: card.children,
+	                        moveCard: _this2.moveCard });
 	                })
-	            ));
+	            );
 	        }
 	    }]);
 	
 	    return Container;
-	}(_react.Component), _class2.propTypes = {
-	    connectDropTarget: _react.PropTypes.func.isRequired
-	}, _temp)) || _class) || _class);
+	}(_react.Component)) || _class);
 	exports.default = Container;
 
 /***/ },
@@ -35067,7 +35049,7 @@
 /* 313 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(ReactDOM) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -35087,11 +35069,19 @@
 	
 	var _react2 = _interopRequireDefault(_react);
 	
+	var _update = __webpack_require__(312);
+	
+	var _update2 = _interopRequireDefault(_update);
+	
 	var _ItemTypes = __webpack_require__(314);
 	
 	var _ItemTypes2 = _interopRequireDefault(_ItemTypes);
 	
 	var _reactDnd = __webpack_require__(315);
+	
+	var _CardChild = __webpack_require__(437);
+	
+	var _CardChild2 = _interopRequireDefault(_CardChild);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -35113,41 +35103,40 @@
 	    beginDrag: function beginDrag(props) {
 	        return {
 	            id: props.id,
-	            originalIndex: props.findCard(props.id).index
+	            index: props.index
 	        };
 	    },
-	    endDrag: function endDrag(props, monitor) {
-	        var _monitor$getItem = monitor.getItem();
-	
-	        var droppedId = _monitor$getItem.id;
-	        var originalIndex = _monitor$getItem.originalIndex;
-	
-	        var didDrop = monitor.didDrop();
-	
-	        if (!didDrop) {
-	            props.moveCard(droppedId, originalIndex);
-	        }
-	    }
+	    endDrag: function endDrag(props, monitor) {}
 	};
 	
 	var cardTarget = {
-	    canDrop: function canDrop() {
-	        return false;
-	    },
-	    hover: function hover(props, monitor) {
-	        var _monitor$getItem2 = monitor.getItem();
+	    hover: function hover(props, monitor, component) {
+	        var dragIndex = monitor.getItem().index;
+	        var hoverIndex = props.index;
 	
-	        var draggedId = _monitor$getItem2.id;
-	        var overId = props.id;
-	
-	
-	        if (draggedId !== overId) {
-	            var _props$findCard = props.findCard(overId);
-	
-	            var overIndex = _props$findCard.index;
-	
-	            props.moveCard(draggedId, overIndex);
+	        if (dragIndex === hoverIndex) {
+	            return;
 	        }
+	
+	        var hoverBoundingRect = ReactDOM.findDOMNode(component).getBoundingClientRect();
+	
+	        var hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+	
+	        var clientOffset = monitor.getClientOffset();
+	
+	        var hoverClientY = clientOffset.y - hoverBoundingRect.top;
+	
+	        if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+	            return;
+	        }
+	
+	        if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+	            return;
+	        }
+	
+	        props.moveCard(dragIndex, hoverIndex);
+	
+	        monitor.getItem().index = hoverIndex;
 	    }
 	};
 	
@@ -35163,27 +35152,60 @@
 	}), _dec(_class = _dec2(_class = (_temp = _class2 = function (_Component) {
 	    _inherits(Card, _Component);
 	
-	    function Card() {
+	    function Card(props) {
 	        _classCallCheck(this, Card);
 	
-	        return _possibleConstructorReturn(this, Object.getPrototypeOf(Card).apply(this, arguments));
+	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(Card).call(this, props));
+	
+	        _this.state = {
+	            cards: props.children
+	        };
+	        return _this;
 	    }
 	
 	    _createClass(Card, [{
+	        key: 'moveCard',
+	        value: function moveCard(dragIndex, hoverIndex) {
+	            var cards = this.state.cards;
+	
+	            var dragCard = cards[dragIndex];
+	
+	            this.setState((0, _update2.default)(this.state, {
+	                cards: {
+	                    $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]]
+	                }
+	            }));
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
+	            var _this2 = this;
+	
 	            var _props = this.props;
 	            var text = _props.text;
 	            var isDragging = _props.isDragging;
 	            var connectDragSource = _props.connectDragSource;
 	            var connectDropTarget = _props.connectDropTarget;
+	            var id = _props.id;
 	
 	            var opacity = isDragging ? 0 : 1;
-	
 	            return connectDragSource(connectDropTarget(_react2.default.createElement(
 	                'div',
 	                { style: _extends({}, style, { opacity: opacity }) },
-	                text
+	                text,
+	                _react2.default.createElement(
+	                    'div',
+	                    null,
+	                    this.state.cards.map(function (card, i) {
+	                        return _react2.default.createElement(_CardChild2.default, {
+	                            pId: id,
+	                            key: card.id,
+	                            index: i,
+	                            id: card.id,
+	                            text: card.text,
+	                            moveCard: _this2.moveCard.bind(_this2) });
+	                    })
+	                )
 	            )));
 	        }
 	    }]);
@@ -35195,10 +35217,10 @@
 	    isDragging: _react.PropTypes.bool.isRequired,
 	    id: _react.PropTypes.any.isRequired,
 	    text: _react.PropTypes.string.isRequired,
-	    moveCard: _react.PropTypes.func.isRequired,
-	    findCard: _react.PropTypes.func.isRequired
+	    moveCard: _react.PropTypes.func.isRequired
 	}, _temp)) || _class) || _class);
 	exports.default = Card;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(77)))
 
 /***/ },
 /* 314 */
@@ -35213,7 +35235,8 @@
 	 * Created by AllenFeng on 2016/8/4.
 	 */
 	exports.default = {
-	  CARD: 'card'
+	  CARD: 'card',
+	  CARD_CHILD: 'cardChild'
 	};
 
 /***/ },
@@ -41305,6 +41328,146 @@
 /* 437 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(ReactDOM) {'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	    value: true
+	});
+	exports.default = undefined;
+	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _dec, _dec2, _class, _class2, _temp; /**
+	                                          * Created by AllenFeng on 2016/8/16.
+	                                          */
+	
+	
+	var _react = __webpack_require__(239);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _ItemTypes = __webpack_require__(314);
+	
+	var _ItemTypes2 = _interopRequireDefault(_ItemTypes);
+	
+	var _reactDnd = __webpack_require__(315);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var style = {
+	    border: '1px dashed gray',
+	    padding: '0.5rem 1rem',
+	    marginBottom: '.5rem',
+	    backgroundColor: 'white',
+	    cursor: 'move'
+	};
+	
+	var cardSource = {
+	    beginDrag: function beginDrag(props) {
+	        return {
+	            id: props.id,
+	            index: props.index,
+	            pId: props.pId
+	        };
+	    },
+	    endDrag: function endDrag(props, monitor) {}
+	};
+	
+	var cardTarget = {
+	    canDrop: function canDrop(props, monitor) {
+	        return false;
+	    },
+	    hover: function hover(props, monitor, component) {
+	        console.log(props, monitor.getItem());
+	        var dragIndex = monitor.getItem().index;
+	        var hoverIndex = props.index;
+	        if (dragIndex === hoverIndex) {
+	            return;
+	        }
+	
+	        var hoverBoundingRect = ReactDOM.findDOMNode(component).getBoundingClientRect();
+	
+	        var hoverMiddleY = (hoverBoundingRect.bottom - hoverBoundingRect.top) / 2;
+	
+	        var clientOffset = monitor.getClientOffset();
+	
+	        var hoverClientY = clientOffset.y - hoverBoundingRect.top;
+	
+	        if (dragIndex < hoverIndex && hoverClientY < hoverMiddleY) {
+	            return;
+	        }
+	
+	        if (dragIndex > hoverIndex && hoverClientY > hoverMiddleY) {
+	            return;
+	        }
+	
+	        props.moveCard(dragIndex, hoverIndex);
+	
+	        monitor.getItem().index = hoverIndex;
+	    }
+	};
+	
+	var CardChild = (_dec = (0, _reactDnd.DropTarget)(_ItemTypes2.default.CARD_CHILD, cardTarget, function (connect) {
+	    return {
+	        connectDropTarget: connect.dropTarget()
+	    };
+	}), _dec2 = (0, _reactDnd.DragSource)(_ItemTypes2.default.CARD_CHILD, cardSource, function (connect, monitor) {
+	    return {
+	        connectDragSource: connect.dragSource(),
+	        isDragging: monitor.isDragging()
+	    };
+	}), _dec(_class = _dec2(_class = (_temp = _class2 = function (_Component) {
+	    _inherits(CardChild, _Component);
+	
+	    function CardChild() {
+	        _classCallCheck(this, CardChild);
+	
+	        return _possibleConstructorReturn(this, Object.getPrototypeOf(CardChild).apply(this, arguments));
+	    }
+	
+	    _createClass(CardChild, [{
+	        key: 'render',
+	        value: function render() {
+	            var _props = this.props;
+	            var text = _props.text;
+	            var isDragging = _props.isDragging;
+	            var connectDragSource = _props.connectDragSource;
+	            var connectDropTarget = _props.connectDropTarget;
+	
+	            var opacity = isDragging ? 0 : 1;
+	
+	            return connectDragSource(connectDropTarget(_react2.default.createElement(
+	                'div',
+	                { style: _extends({}, style, { opacity: opacity }) },
+	                text
+	            )));
+	        }
+	    }]);
+	
+	    return CardChild;
+	}(_react.Component), _class2.propTypes = {
+	    connectDragSource: _react.PropTypes.func.isRequired,
+	    connectDropTarget: _react.PropTypes.func.isRequired,
+	    isDragging: _react.PropTypes.bool.isRequired,
+	    id: _react.PropTypes.any.isRequired,
+	    text: _react.PropTypes.string.isRequired,
+	    moveCard: _react.PropTypes.func.isRequired
+	}, _temp)) || _class) || _class);
+	exports.default = CardChild;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(77)))
+
+/***/ },
+/* 438 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 	
 	exports.__esModule = true;
@@ -41314,15 +41477,15 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _HTML5Backend = __webpack_require__(438);
+	var _HTML5Backend = __webpack_require__(439);
 	
 	var _HTML5Backend2 = _interopRequireDefault(_HTML5Backend);
 	
-	var _getEmptyImage = __webpack_require__(467);
+	var _getEmptyImage = __webpack_require__(468);
 	
 	var _getEmptyImage2 = _interopRequireDefault(_getEmptyImage);
 	
-	var _NativeTypes = __webpack_require__(466);
+	var _NativeTypes = __webpack_require__(467);
 	
 	var NativeTypes = _interopRequireWildcard(_NativeTypes);
 	
@@ -41334,7 +41497,7 @@
 	}
 
 /***/ },
-/* 438 */
+/* 439 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -41347,25 +41510,25 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _lodashDefaults = __webpack_require__(439);
+	var _lodashDefaults = __webpack_require__(440);
 	
 	var _lodashDefaults2 = _interopRequireDefault(_lodashDefaults);
 	
-	var _shallowEqual = __webpack_require__(456);
+	var _shallowEqual = __webpack_require__(457);
 	
 	var _shallowEqual2 = _interopRequireDefault(_shallowEqual);
 	
-	var _EnterLeaveCounter = __webpack_require__(457);
+	var _EnterLeaveCounter = __webpack_require__(458);
 	
 	var _EnterLeaveCounter2 = _interopRequireDefault(_EnterLeaveCounter);
 	
-	var _BrowserDetector = __webpack_require__(461);
+	var _BrowserDetector = __webpack_require__(462);
 	
-	var _OffsetUtils = __webpack_require__(463);
+	var _OffsetUtils = __webpack_require__(464);
 	
-	var _NativeDragSources = __webpack_require__(465);
+	var _NativeDragSources = __webpack_require__(466);
 	
-	var _NativeTypes = __webpack_require__(466);
+	var _NativeTypes = __webpack_require__(467);
 	
 	var NativeTypes = _interopRequireWildcard(_NativeTypes);
 	
@@ -41915,12 +42078,12 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 439 */
+/* 440 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var apply = __webpack_require__(385),
-	    assignInDefaults = __webpack_require__(440),
-	    assignInWith = __webpack_require__(441),
+	    assignInDefaults = __webpack_require__(441),
+	    assignInWith = __webpack_require__(442),
 	    rest = __webpack_require__(384);
 	
 	/**
@@ -41953,7 +42116,7 @@
 
 
 /***/ },
-/* 440 */
+/* 441 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eq = __webpack_require__(359);
@@ -41986,12 +42149,12 @@
 
 
 /***/ },
-/* 441 */
+/* 442 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var copyObject = __webpack_require__(442),
-	    createAssigner = __webpack_require__(444),
-	    keysIn = __webpack_require__(447);
+	var copyObject = __webpack_require__(443),
+	    createAssigner = __webpack_require__(445),
+	    keysIn = __webpack_require__(448);
 	
 	/**
 	 * This method is like `_.assignIn` except that it accepts `customizer`
@@ -42030,10 +42193,10 @@
 
 
 /***/ },
-/* 442 */
+/* 443 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var assignValue = __webpack_require__(443);
+	var assignValue = __webpack_require__(444);
 	
 	/**
 	 * Copies properties of `source` to `object`.
@@ -42067,7 +42230,7 @@
 
 
 /***/ },
-/* 443 */
+/* 444 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eq = __webpack_require__(359);
@@ -42100,10 +42263,10 @@
 
 
 /***/ },
-/* 444 */
+/* 445 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isIterateeCall = __webpack_require__(445),
+	var isIterateeCall = __webpack_require__(446),
 	    rest = __webpack_require__(384);
 	
 	/**
@@ -42143,12 +42306,12 @@
 
 
 /***/ },
-/* 445 */
+/* 446 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var eq = __webpack_require__(359),
 	    isArrayLike = __webpack_require__(380),
-	    isIndex = __webpack_require__(446),
+	    isIndex = __webpack_require__(447),
 	    isObject = __webpack_require__(331);
 	
 	/**
@@ -42179,7 +42342,7 @@
 
 
 /***/ },
-/* 446 */
+/* 447 */
 /***/ function(module, exports) {
 
 	/** Used as references for various `Number` constants. */
@@ -42207,13 +42370,13 @@
 
 
 /***/ },
-/* 447 */
+/* 448 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseKeysIn = __webpack_require__(448),
-	    indexKeys = __webpack_require__(451),
-	    isIndex = __webpack_require__(446),
-	    isPrototype = __webpack_require__(455);
+	var baseKeysIn = __webpack_require__(449),
+	    indexKeys = __webpack_require__(452),
+	    isIndex = __webpack_require__(447),
+	    isPrototype = __webpack_require__(456);
 	
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -42268,11 +42431,11 @@
 
 
 /***/ },
-/* 448 */
+/* 449 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var Reflect = __webpack_require__(449),
-	    iteratorToArray = __webpack_require__(450);
+	var Reflect = __webpack_require__(450),
+	    iteratorToArray = __webpack_require__(451);
 	
 	/** Used for built-in method references. */
 	var objectProto = Object.prototype;
@@ -42310,7 +42473,7 @@
 
 
 /***/ },
-/* 449 */
+/* 450 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var root = __webpack_require__(347);
@@ -42322,7 +42485,7 @@
 
 
 /***/ },
-/* 450 */
+/* 451 */
 /***/ function(module, exports) {
 
 	/**
@@ -42346,14 +42509,14 @@
 
 
 /***/ },
-/* 451 */
+/* 452 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseTimes = __webpack_require__(452),
-	    isArguments = __webpack_require__(453),
+	var baseTimes = __webpack_require__(453),
+	    isArguments = __webpack_require__(454),
 	    isArray = __webpack_require__(330),
 	    isLength = __webpack_require__(383),
-	    isString = __webpack_require__(454);
+	    isString = __webpack_require__(455);
 	
 	/**
 	 * Creates an array of index keys for `object` values of arrays,
@@ -42376,7 +42539,7 @@
 
 
 /***/ },
-/* 452 */
+/* 453 */
 /***/ function(module, exports) {
 
 	/**
@@ -42402,7 +42565,7 @@
 
 
 /***/ },
-/* 453 */
+/* 454 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArrayLikeObject = __webpack_require__(379);
@@ -42454,7 +42617,7 @@
 
 
 /***/ },
-/* 454 */
+/* 455 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var isArray = __webpack_require__(330),
@@ -42500,7 +42663,7 @@
 
 
 /***/ },
-/* 455 */
+/* 456 */
 /***/ function(module, exports) {
 
 	/** Used for built-in method references. */
@@ -42524,7 +42687,7 @@
 
 
 /***/ },
-/* 456 */
+/* 457 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -42565,7 +42728,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 457 */
+/* 458 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42576,7 +42739,7 @@
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 	
-	var _lodashUnion = __webpack_require__(458);
+	var _lodashUnion = __webpack_require__(459);
 	
 	var _lodashUnion2 = _interopRequireDefault(_lodashUnion);
 	
@@ -42622,10 +42785,10 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 458 */
+/* 459 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var baseFlatten = __webpack_require__(459),
+	var baseFlatten = __webpack_require__(460),
 	    baseUniq = __webpack_require__(396),
 	    isArrayLikeObject = __webpack_require__(379),
 	    rest = __webpack_require__(384);
@@ -42654,11 +42817,11 @@
 
 
 /***/ },
-/* 459 */
+/* 460 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var arrayPush = __webpack_require__(395),
-	    isFlattenable = __webpack_require__(460);
+	    isFlattenable = __webpack_require__(461);
 	
 	/**
 	 * The base implementation of `_.flatten` with support for restricting flattening.
@@ -42698,10 +42861,10 @@
 
 
 /***/ },
-/* 460 */
+/* 461 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var isArguments = __webpack_require__(453),
+	var isArguments = __webpack_require__(454),
 	    isArray = __webpack_require__(330);
 	
 	/**
@@ -42719,7 +42882,7 @@
 
 
 /***/ },
-/* 461 */
+/* 462 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42728,7 +42891,7 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _lodashMemoize = __webpack_require__(462);
+	var _lodashMemoize = __webpack_require__(463);
 	
 	var _lodashMemoize2 = _interopRequireDefault(_lodashMemoize);
 	
@@ -42744,7 +42907,7 @@
 	exports.isSafari = isSafari;
 
 /***/ },
-/* 462 */
+/* 463 */
 /***/ function(module, exports, __webpack_require__) {
 
 	var MapCache = __webpack_require__(337);
@@ -42823,7 +42986,7 @@
 
 
 /***/ },
-/* 463 */
+/* 464 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -42835,9 +42998,9 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 	
-	var _BrowserDetector = __webpack_require__(461);
+	var _BrowserDetector = __webpack_require__(462);
 	
-	var _MonotonicInterpolant = __webpack_require__(464);
+	var _MonotonicInterpolant = __webpack_require__(465);
 	
 	var _MonotonicInterpolant2 = _interopRequireDefault(_MonotonicInterpolant);
 	
@@ -42923,7 +43086,7 @@
 	}
 
 /***/ },
-/* 464 */
+/* 465 */
 /***/ function(module, exports) {
 
 	"use strict";
@@ -43040,7 +43203,7 @@
 	module.exports = exports["default"];
 
 /***/ },
-/* 465 */
+/* 466 */
 /***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
@@ -43058,7 +43221,7 @@
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
-	var _NativeTypes = __webpack_require__(466);
+	var _NativeTypes = __webpack_require__(467);
 	
 	var NativeTypes = _interopRequireWildcard(_NativeTypes);
 	
@@ -43148,7 +43311,7 @@
 	}
 
 /***/ },
-/* 466 */
+/* 467 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43162,7 +43325,7 @@
 	exports.TEXT = TEXT;
 
 /***/ },
-/* 467 */
+/* 468 */
 /***/ function(module, exports) {
 
 	'use strict';
@@ -43183,7 +43346,7 @@
 	module.exports = exports['default'];
 
 /***/ },
-/* 468 */
+/* 469 */
 /***/ function(module, exports) {
 
 	// removed by extract-text-webpack-plugin
