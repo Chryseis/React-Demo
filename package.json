@@ -2,7 +2,7 @@
   "name": "react-webpack",
   "version": "1.0.0",
   "description": "study",
-  "main": "index.js",
+  "main": "main.js",
   "scripts": {
     "start": "gulp"
   },
