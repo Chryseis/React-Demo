@@ -1,10 +1,9 @@
 /**
  * Created by AllenFeng on 2016/8/4.
  */
-import React, { Component } from 'react';
 import Container from './Container';
 
-export default class SortableCancelOnDropOutside extends Component {
+export default class SortableCancelOnDropOutside extends React.Component {
     render() {
         return (
             <div>

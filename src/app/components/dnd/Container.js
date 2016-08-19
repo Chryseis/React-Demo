@@ -13,7 +13,6 @@ const style = {
 };
 
 
-
 @DragDropContext(HTML5Backend)
 export default class Container extends Component {
 
@@ -54,7 +53,7 @@ export default class Container extends Component {
     }
 
     moveCard(dragIndex, hoverIndex) {
-        const { cards } = this.state;
+        const {cards} = this.state;
         const dragCard = cards[dragIndex];
 
         this.setState(update(this.state, {
@@ -67,19 +66,37 @@ export default class Container extends Component {
         }));
     }
 
+    moveChildCard(dragIndex, hoverIndex, index) {
+        const {children} = this.state.cards[index];
+        const dragCard = children[dragIndex];
+
+        this.setState(update(this.state, {
+            cards: {
+                [index]: {
+                    children: {
+                        $splice: [
+                            [dragIndex, 1],
+                            [hoverIndex, 0, dragCard]
+                        ]
+                    }
+                }
+            }
+        }));
+    }
+
     render() {
-        const {connectDropTarget} = this.props;
         const {cards} = this.state;
 
         return <div style={style}>
-            {cards.map((card,i) => {
+            {cards.map((card, i) => {
                 return (
                     <Card key={card.id}
                           index={i}
                           id={card.id}
                           text={card.text}
                           children={card.children}
-                          moveCard={this.moveCard}/>
+                          moveCard={this.moveCard}
+                          moveChildCard={::this.moveChildCard}/>
                 );
             })}
         </div>

@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "1d61a41eb3df16e5dd2d"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "6f7c0ddffc5f24c60cf5"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -34701,7 +34701,7 @@
 /* 310 */
 /***/ function(module, exports, __webpack_require__) {
 
-	'use strict';
+	/* WEBPACK VAR INJECTION */(function(React) {'use strict';
 	
 	Object.defineProperty(exports, "__esModule", {
 	    value: true
@@ -34709,10 +34709,6 @@
 	exports.default = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-	
-	var _react = __webpack_require__(239);
-	
-	var _react2 = _interopRequireDefault(_react);
 	
 	var _Container = __webpack_require__(311);
 	
@@ -34729,8 +34725,8 @@
 	                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                */
 	
 	
-	var SortableCancelOnDropOutside = function (_Component) {
-	    _inherits(SortableCancelOnDropOutside, _Component);
+	var SortableCancelOnDropOutside = function (_React$Component) {
+	    _inherits(SortableCancelOnDropOutside, _React$Component);
 	
 	    function SortableCancelOnDropOutside() {
 	        _classCallCheck(this, SortableCancelOnDropOutside);
@@ -34741,54 +34737,55 @@
 	    _createClass(SortableCancelOnDropOutside, [{
 	        key: 'render',
 	        value: function render() {
-	            return _react2.default.createElement(
+	            return React.createElement(
 	                'div',
 	                null,
-	                _react2.default.createElement(
+	                React.createElement(
 	                    'p',
 	                    null,
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'b',
 	                        null,
-	                        _react2.default.createElement(
+	                        React.createElement(
 	                            'a',
 	                            { href: 'https://github.com/gaearon/react-dnd/tree/master/examples/04%20Sortable/Cancel%20on%20Drop%20Outside' },
 	                            'Browse the Source'
 	                        )
 	                    )
 	                ),
-	                _react2.default.createElement(
+	                React.createElement(
 	                    'p',
 	                    null,
 	                    'Because you write the logic instead of using the readymade components, you can tweak the behavior to the one your app needs. In this example, instead of moving the card inside the drop target\'s ',
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'code',
 	                        null,
 	                        'drop()'
 	                    ),
 	                    ' handler, we do it inside the drag source\'s ',
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'code',
 	                        null,
 	                        'endDrag()'
 	                    ),
 	                    ' handler. This let us check ',
-	                    _react2.default.createElement(
+	                    React.createElement(
 	                        'code',
 	                        null,
 	                        'monitor.didDrop()'
 	                    ),
 	                    ' and revert the drag operation if the card was dropped outside its container.'
 	                ),
-	                _react2.default.createElement(_Container2.default, null)
+	                React.createElement(_Container2.default, null)
 	            );
 	        }
 	    }]);
 	
 	    return SortableCancelOnDropOutside;
-	}(_react.Component);
+	}(React.Component);
 	
 	exports.default = SortableCancelOnDropOutside;
+	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(239)))
 
 /***/ },
 /* 311 */
@@ -34831,6 +34828,8 @@
 	var _ItemTypes2 = _interopRequireDefault(_ItemTypes);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
@@ -34899,11 +34898,25 @@
 	            }));
 	        }
 	    }, {
+	        key: 'moveChildCard',
+	        value: function moveChildCard(dragIndex, hoverIndex, index) {
+	            var children = this.state.cards[index].children;
+	
+	            var dragCard = children[dragIndex];
+	
+	            this.setState((0, _update2.default)(this.state, {
+	                cards: _defineProperty({}, index, {
+	                    children: {
+	                        $splice: [[dragIndex, 1], [hoverIndex, 0, dragCard]]
+	                    }
+	                })
+	            }));
+	        }
+	    }, {
 	        key: 'render',
 	        value: function render() {
 	            var _this2 = this;
 	
-	            var connectDropTarget = this.props.connectDropTarget;
 	            var cards = this.state.cards;
 	
 	
@@ -34916,7 +34929,8 @@
 	                        id: card.id,
 	                        text: card.text,
 	                        children: card.children,
-	                        moveCard: _this2.moveCard });
+	                        moveCard: _this2.moveCard,
+	                        moveChildCard: _this2.moveChildCard.bind(_this2) });
 	                })
 	            );
 	        }
@@ -35187,6 +35201,7 @@
 	            var connectDragSource = _props.connectDragSource;
 	            var connectDropTarget = _props.connectDropTarget;
 	            var id = _props.id;
+	            var index = _props.index;
 	
 	            var opacity = isDragging ? 0 : 1;
 	            return connectDragSource(connectDropTarget(_react2.default.createElement(
@@ -35196,14 +35211,15 @@
 	                _react2.default.createElement(
 	                    'div',
 	                    null,
-	                    this.state.cards.map(function (card, i) {
+	                    this.props.children.map(function (card, i) {
 	                        return _react2.default.createElement(_CardChild2.default, {
 	                            pId: id,
 	                            key: card.id,
 	                            index: i,
+	                            pIndex: index,
 	                            id: card.id,
 	                            text: card.text,
-	                            moveCard: _this2.moveCard.bind(_this2) });
+	                            moveCard: _this2.props.moveChildCard });
 	                    })
 	                )
 	            )));
@@ -41386,7 +41402,9 @@
 	        return false;
 	    },
 	    hover: function hover(props, monitor, component) {
-	        console.log(props, monitor.getItem());
+	        if (props.pId !== monitor.getItem().pId) {
+	            return;
+	        }
 	        var dragIndex = monitor.getItem().index;
 	        var hoverIndex = props.index;
 	        if (dragIndex === hoverIndex) {
@@ -41409,7 +41427,7 @@
 	            return;
 	        }
 	
-	        props.moveCard(dragIndex, hoverIndex);
+	        props.moveCard(dragIndex, hoverIndex, props.pIndex);
 	
 	        monitor.getItem().index = hoverIndex;
 	    }

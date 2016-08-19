@@ -57,7 +57,7 @@ const cardTarget = {
             return;
         }
 
-        props.moveCard(dragIndex, hoverIndex);
+        props.moveCard(dragIndex, hoverIndex,props.pIndex);
 
         monitor.getItem().index = hoverIndex;
     }

@@ -98,20 +98,21 @@ export default class Card extends Component {
     }
 
     render() {
-        const { text, isDragging, connectDragSource, connectDropTarget,id } = this.props;
+        const { text, isDragging, connectDragSource, connectDropTarget,id,index } = this.props;
         const opacity = isDragging ? 0 : 1;
         return connectDragSource(connectDropTarget(
             <div style={{ ...style, opacity }}>
                 {text}
                 <div>
-                    {this.state.cards.map((card,i)=>{
+                    {this.props.children.map((card,i)=>{
                         return <CardChild
                                 pId={id}
                                 key={card.id}
                                 index={i}
+                                pIndex={index}
                                 id={card.id}
                                 text={card.text}
-                                moveCard={::this.moveCard}/>
+                                moveCard={this.props.moveChildCard}/>
                     })}
                 </div>
             </div>
