@@ -98,7 +98,7 @@ export default class Card extends Component {
     }
 
     render() {
-        const { text, isDragging, connectDragSource, connectDropTarget,id,index } = this.props;
+        const { text, isDragging, connectDragSource, connectDropTarget,id,index,moveChildCard } = this.props;
         const opacity = isDragging ? 0 : 1;
         return connectDragSource(connectDropTarget(
             <div style={{ ...style, opacity }}>
@@ -112,7 +112,7 @@ export default class Card extends Component {
                                 pIndex={index}
                                 id={card.id}
                                 text={card.text}
-                                moveCard={this.props.moveChildCard}/>
+                                moveCard={moveChildCard}/>
                     })}
                 </div>
             </div>

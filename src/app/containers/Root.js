@@ -4,6 +4,7 @@
 import {Router,Route,browserHistory,Redirect} from 'react-router';
 import Hello from '../components/Hello';
 import {ReactClass} from '../components/Demo';
+import SortableCancelOnDropOutside from '../components/dnd/index';
 
 export default class Root extends React.Component{
     
@@ -12,6 +13,7 @@ export default class Root extends React.Component{
             <Route path="hello" component={Hello}>
                 <Route path="demo" component={ReactClass}></Route>
             </Route>
+            <Route path="dnd" component={SortableCancelOnDropOutside}></Route>
             <Redirect from="/" to="/hello"/>
         </Router>
     }

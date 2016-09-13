@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "6f7c0ddffc5f24c60cf5"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "4ef597dab288eb1d9b22"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -8187,18 +8187,11 @@
 	
 	var _Root2 = _interopRequireDefault(_Root);
 	
-	var _index = __webpack_require__(310);
-	
-	var _index2 = _interopRequireDefault(_index);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	/**
-	 * Created by AllenFeng on 2016/7/4.
-	 */
-	
-	
-	ReactDOM.render(React.createElement(_index2.default, null), document.getElementById('content'));
+	ReactDOM.render(React.createElement(_Root2.default, null), document.getElementById('content')); /**
+	                                                                                                 * Created by AllenFeng on 2016/7/4.
+	                                                                                                 */
 	/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(77), __webpack_require__(239)))
 
 /***/ },
@@ -29012,6 +29005,10 @@
 	
 	var _Demo = __webpack_require__(309);
 	
+	var _index = __webpack_require__(310);
+	
+	var _index2 = _interopRequireDefault(_index);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -29043,6 +29040,7 @@
 	                    { path: 'hello', component: _Hello2.default },
 	                    React.createElement(_reactRouter.Route, { path: 'demo', component: _Demo.ReactClass })
 	                ),
+	                React.createElement(_reactRouter.Route, { path: 'dnd', component: _index2.default }),
 	                React.createElement(_reactRouter.Redirect, { from: '/', to: '/hello' })
 	            );
 	        }
@@ -35193,8 +35191,6 @@
 	    }, {
 	        key: 'render',
 	        value: function render() {
-	            var _this2 = this;
-	
 	            var _props = this.props;
 	            var text = _props.text;
 	            var isDragging = _props.isDragging;
@@ -35202,6 +35198,7 @@
 	            var connectDropTarget = _props.connectDropTarget;
 	            var id = _props.id;
 	            var index = _props.index;
+	            var moveChildCard = _props.moveChildCard;
 	
 	            var opacity = isDragging ? 0 : 1;
 	            return connectDragSource(connectDropTarget(_react2.default.createElement(
@@ -35219,7 +35216,7 @@
 	                            pIndex: index,
 	                            id: card.id,
 	                            text: card.text,
-	                            moveCard: _this2.props.moveChildCard });
+	                            moveCard: moveChildCard });
 	                    })
 	                )
 	            )));
