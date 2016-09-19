@@ -83,28 +83,14 @@ export default class Card extends Component {
         }
     }
 
-    moveCard(dragIndex, hoverIndex) {
-        const { cards } = this.state;
-        const dragCard = cards[dragIndex];
-
-        this.setState(update(this.state, {
-            cards: {
-                $splice: [
-                    [dragIndex, 1],
-                    [hoverIndex, 0, dragCard]
-                ]
-            }
-        }));
-    }
-
     render() {
-        const { text, isDragging, connectDragSource, connectDropTarget,id,index,moveChildCard } = this.props;
+        const { text, isDragging, connectDragSource, connectDropTarget,id,index,moveChildCard,cards } = this.props;
         const opacity = isDragging ? 0 : 1;
         return connectDragSource(connectDropTarget(
             <div style={{ ...style, opacity }}>
                 {text}
                 <div>
-                    {this.props.children.map((card,i)=>{
+                    {cards.map((card,i)=>{
                         return <CardChild
                                 pId={id}
                                 key={card.id}

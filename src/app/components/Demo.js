@@ -3,7 +3,7 @@
  */
 
 
-export const ReactClass=React.createClass({
+export const Demo=React.createClass({
     render () {
         return <div>Hi,Easy{this.xixi()}</div>
     },

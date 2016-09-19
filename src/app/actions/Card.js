@@ -3,20 +3,19 @@
  */
 import * as Action from '../constants/ActionType'
 
-export function MOVE_CARD() {
+export function moveCard(dragIndex,hoverIndex) {
     return{
         type:Action.MOVE_CARD,
+        dragIndex,
+        hoverIndex
     }
 }
 
-export function MOVE_CHILD_CARD() {
+export function moveChildCard(dragIndex,hoverIndex,index) {
     return{
-        type:Action.MOVE_CHILD_CARD
-    }
-}
-
-export function GET_CARD() {
-    return{
-        type:Action.GET_CARD
+        type:Action.MOVE_CHILD_CARD,
+        dragIndex,
+        hoverIndex,
+        index
     }
 }

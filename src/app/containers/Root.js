@@ -3,17 +3,19 @@
  */
 import {Router,Route,browserHistory,Redirect} from 'react-router';
 import Hello from '../components/Hello';
-import {ReactClass} from '../components/Demo';
+import {Demo} from '../components/Demo';
 import SortableCancelOnDropOutside from '../components/dnd/index';
 import {Provider} from 'react-redux';
+import configureStore from '../store/configureStore'
+
+const store=configureStore();
 
 export default class Root extends React.Component{
-    
     render(){
-        return <Provider>
+        return <Provider store={store}>
             <Router history={browserHistory}>
                 <Route path="hello" component={Hello}>
-                    <Route path="demo" component={ReactClass}></Route>
+                    <Route path="demo" component={Demo}></Route>
                 </Route>
                 <Route path="dnd" component={SortableCancelOnDropOutside}></Route>
                 <Redirect from="/" to="/hello"/>
