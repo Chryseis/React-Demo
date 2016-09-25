@@ -20,6 +20,10 @@ export default class Container extends Component {
         super(props);
     }
 
+    componentDidMount(){
+        this.props.getCards();
+    }
+
     render() {
         const {cards,moveCard,moveChildCard} = this.props;
         return <div style={style}>

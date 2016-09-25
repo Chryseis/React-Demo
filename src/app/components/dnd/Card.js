@@ -78,9 +78,6 @@ export default class Card extends Component {
 
     constructor(props){
         super(props);
-        this.state={
-            cards:props.children
-        }
     }
 
     render() {

@@ -19,3 +19,15 @@ export function moveChildCard(dragIndex,hoverIndex,index) {
         index
     }
 }
+
+export function getCards() {
+    return (dispatch)=>{
+        fetch('app/database/Cards.json')
+            .then(res=>(res.json()))
+                .then(json=>(dispatch({
+                type:Action.GET_CARD,
+                cards:json
+            })))
+    }
+
+}

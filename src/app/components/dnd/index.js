@@ -9,7 +9,8 @@ import * as Action from '../../actions/Card'
     cards:state.card.cards
 }),(dispatch)=>({
     moveCard:(dragIndex,hoverIndex)=>(dispatch(Action.moveCard(dragIndex,hoverIndex))),
-    moveChildCard:(dragIndex,hoverIndex,index)=>(dispatch(Action.moveChildCard(dragIndex,hoverIndex,index)))
+    moveChildCard:(dragIndex,hoverIndex,index)=>(dispatch(Action.moveChildCard(dragIndex,hoverIndex,index))),
+    getCards:()=>(dispatch(Action.getCards()))
 }))
 export default class SortableCancelOnDropOutside extends React.Component {
     render() {

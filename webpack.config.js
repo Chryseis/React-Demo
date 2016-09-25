@@ -8,6 +8,7 @@ var path = require('path');
 module.exports = {
     devtool: 'source-map',
     entry: [
+        'whatwg-fetch',
         'webpack-dev-server/client?http://127.0.0.1:8000', // WebpackDevServer host and port
         'webpack/hot/only-dev-server',
         './src/app/main.js',
