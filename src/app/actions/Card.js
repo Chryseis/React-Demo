@@ -22,7 +22,7 @@ export function moveChildCard(dragIndex,hoverIndex,index) {
 
 export function getCards() {
     return (dispatch)=>{
-        fetch('app/database/Cards.json')
+       return fetch('app/database/Cards.json')
             .then(res=>(res.json()))
                 .then(json=>(dispatch({
                 type:Action.GET_CARD,

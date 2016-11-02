@@ -6,7 +6,8 @@ var gulp=require('gulp'),
     webpackStream=require('webpack-stream'),
     webpack=require('webpack'),
     webpackDevServer=require('webpack-dev-server'),
-    config=require('./webpack.config');
+    config=require('./webpack.config'),
+    configPublish=require('./webpack.publish.config');
 
 gulp.task('default',function () {
    gulp.run('webpack-dev-server','watch');
@@ -19,8 +20,14 @@ gulp.task('watch',function () {
 gulp.task('webpack',function () {
     return gulp.src('src/app/main.js')
         .pipe(webpackStream(config))
-        .pipe(gulp.dest('assets/'))
+        .pipe(gulp.dest('public/'))
 });
+
+gulp.task('webpack-publish',function () {
+    return gulp.src('src/app/main.js')
+        .pipe(webpackStream(configPublish))
+        .pipe(gulp.dest('assets'));
+})
 
 gulp.task('webpack-dev-server',function () {
     new webpackDevServer(webpack(config),{
