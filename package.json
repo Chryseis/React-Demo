@@ -31,6 +31,7 @@
     "gulp": "^3.9.1",
     "gulp-livereload": "^3.8.1",
     "gulp-watch": "^4.3.9",
+    "mockjs": "^1.0.1-beta3",
     "node-gyp": "^3.4.0",
     "node-sass": "^3.8.0",
     "react": "^15.2.0",

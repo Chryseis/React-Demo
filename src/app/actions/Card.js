@@ -1,7 +1,7 @@
 /**
  * Created by chrys_000 on 2016/9/14.
  */
-import * as Action from '../constants/ActionType'
+import * as Action from '../constants/ActionType';
 
 export function moveCard(dragIndex,hoverIndex) {
     return{
@@ -22,12 +22,11 @@ export function moveChildCard(dragIndex,hoverIndex,index) {
 
 export function getCards() {
     return (dispatch)=>{
-       return fetch('app/database/Cards.json')
+       return fetch('/app/database/Cards.json')
             .then(res=>(res.json()))
                 .then(json=>(dispatch({
                 type:Action.GET_CARD,
                 cards:json
             })))
     }
-
 }

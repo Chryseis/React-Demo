@@ -14,14 +14,7 @@ export default class Hello extends React.Component {
     }
 
     componentDidMount(){
-        // fetch('app/database/Cards.json')
-        //     .then(res=>(res.json()))
-        //     .then(json=>{
-        //         this.setState({
-        //             Hello:json.a1,
-        //             World:json.b1
-        //         })
-        //     })
+
     }
 
     render() {

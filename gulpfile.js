@@ -26,7 +26,7 @@ gulp.task('webpack',function () {
 gulp.task('webpack-publish',function () {
     return gulp.src('src/app/main.js')
         .pipe(webpackStream(configPublish))
-        .pipe(gulp.dest('assets'));
+        .pipe(gulp.dest('assets/'));
 })
 
 gulp.task('webpack-dev-server',function () {
