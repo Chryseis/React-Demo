@@ -36,7 +36,7 @@ module.exports = {
         }]
     },
     resolve: {
-        extension: ['', '.js', '.jsx'],
+        extensions: ['', '.js', '.jsx'],
 /*        alias: {
             'react': path.join(__dirname, 'node_modules', 'react/dist/react.min.js'),
             'reactdom': path.join(__dirname, 'node_modules', 'react-dom/dist/react-dom.min.js')

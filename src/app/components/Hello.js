@@ -1,7 +1,7 @@
 /**
  * Created by AllenFeng on 2016/7/4.
  */
-
+import JsxComponents from'./test'
 
 export default class Hello extends React.Component {
 
@@ -23,6 +23,7 @@ export default class Hello extends React.Component {
             {Hello}
             <div className="big">
                 {World}
+                <JsxComponents></JsxComponents>
             </div>
             {this.props.children}
         </div>
