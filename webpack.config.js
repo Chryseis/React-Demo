@@ -2,18 +2,19 @@
  * Created by AllenFeng on 2016/7/4.
  */
 var webpack = require('webpack');
-var ExtractTextPlugin  = require('extract-text-webpack-plugin');
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var path = require('path');
 
 module.exports = {
     devtool: 'source-map',
-    debug:true,
+    debug: true,
     entry: [
         'whatwg-fetch',
         'webpack-dev-server/client?http://127.0.0.1:8000', // WebpackDevServer host and port
         'webpack/hot/only-dev-server',
         './src/app/main.js',
-        './src/styles/main.scss'
+        './src/styles/main.scss',
+        './src/styles/main.css'
     ],
     output: {
         path: path.resolve(__dirname, "assets"),
@@ -30,23 +31,23 @@ module.exports = {
             test: /\.(js|jsx)$/,
             exclude: /node_modules/,
             loader: 'babel'
-        },{
-            test: /\.scss$/,
-            loader: ExtractTextPlugin .extract("style", "css!sass?sourceMap")
+        }, {
+            test: /\.(css|scss)$/,
+            loader: ExtractTextPlugin.extract("style", "css!sass?sourceMap")
         }]
     },
     resolve: {
         extensions: ['', '.js', '.jsx'],
-/*        alias: {
-            'react': path.join(__dirname, 'node_modules', 'react/dist/react.min.js'),
-            'reactdom': path.join(__dirname, 'node_modules', 'react-dom/dist/react-dom.min.js')
-        }*/
+        /*        alias: {
+         'react': path.join(__dirname, 'node_modules', 'react/dist/react.min.js'),
+         'reactdom': path.join(__dirname, 'node_modules', 'react-dom/dist/react-dom.min.js')
+         }*/
     },
     plugins: [new webpack.HotModuleReplacementPlugin(), new webpack.ProvidePlugin({
         "React": "react",
         "ReactDOM": "react-dom",
         "_": "lodash",
-        "classnames":"classnames"
-    }),new ExtractTextPlugin("[name].css",{allChunks: true})
+        "classnames": "classnames"
+    }), new ExtractTextPlugin("[name].css", {allChunks: true})
     ]
 };
