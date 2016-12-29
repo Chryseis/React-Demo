@@ -14,16 +14,25 @@ export function getProvinces() {
     }
 }
 
-export function getCitys(citys) {
+export function getCitys(citys,currentPro) {
     return {
         type:Action.GET_CITYS,
-        citys:citys
+        citys:citys,
+        currentPro:currentPro
     }
 }
 
-export function getSubdistricts(subdistricts) {
+export function getSubdistricts(subdistricts,currentCity) {
     return {
         type:Action.GET_SUBDISTRICTS,
-        subdistricts:subdistricts
+        subdistricts:subdistricts,
+        currentCity:currentCity
+    }
+}
+
+export function changeTab(tab) {
+    return {
+        type:Action.CHANGE_TAB,
+        tab:tab
     }
 }

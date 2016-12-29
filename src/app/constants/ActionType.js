@@ -8,3 +8,4 @@ export const GET_CARD='GET_CARD';
 export const GET_PROVINCES='GET_PROCINCES';
 export const GET_CITYS='GET_CITYS';
 export const GET_SUBDISTRICTS='GET_SUBDISTRICTS';
+export const CHANGE_TAB='CHANGE_TAB';

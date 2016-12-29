@@ -11,11 +11,15 @@ import * as Action from '../../actions/Citys';
     subdistricts:state.citys.subdistricts,
     showProvince:state.citys.showPro,
     showCitys:state.citys.showCitys,
-    showSubdistricts:state.citys.showSub
+    showSubdistricts:state.citys.showSub,
+    currentProvince:state.citys.currentPro,
+    currentCity:state.citys.currentCity,
+    currentSubdistrict:state.citys.currentSub
 }),dispatch=>({
     getProvinces:()=>(dispatch(Action.getProvinces())),
-    getCitys:(citys)=>(dispatch(Action.getCitys(citys))),
-    getSubdistricts:(subdustricts)=>(dispatch(Action.getSubdistricts(subdustricts)))
+    getCitys:(citys,currentPro)=>(dispatch(Action.getCitys(citys,currentPro))),
+    getSubdistricts:(subdustricts,currentCity)=>(dispatch(Action.getSubdistricts(subdustricts,currentCity))),
+    changeTab:(tab)=>(dispatch(Action.changeTab(tab)))
 }))
 export default class AreaTools extends React.Component{
 
@@ -25,22 +29,22 @@ export default class AreaTools extends React.Component{
     }
 
     render(){
-        const {provinces,citys,subdistricts,getCitys,getSubdistricts,showProvince,showCitys,showSubdistricts}=this.props;
+        const {provinces,citys,subdistricts,getCitys,getSubdistricts,showProvince,showCitys,showSubdistricts,changeTab,currentProvince,currentCity,currentSubdistrict}=this.props;
         return <div style={{width: '800px',height: '600px',border: 'solid'}}>
             <div className="area-content">
                 <input type="text" style={{width:300}} />
                     <div className="area-container">
                         <div className="area">
                             <ul className="area-tools clearfix">
-                                <li className={classnames({'area-province':true,active:!showProvince})}>选择省份</li>
-                                <li className={classnames({'area-citys':true,active:!showCitys})}>选择城市</li>
-                                <li className={classnames({'area-subdistrict':true,active:!showSubdistricts})}>选择区县</li>
+                                <li onClick={changeTab.bind(null,'provinces')} className={classnames({'area-province':true,active:!showProvince})}>选择省份</li>
+                                <li onClick={changeTab.bind(null,'citys')} className={classnames({'area-citys':true,active:!showCitys})}>选择城市</li>
+                                <li onClick={changeTab.bind(null,'subdistricts')} className={classnames({'area-subdistrict':true,active:!showSubdistricts})}>选择区县</li>
                             </ul>
                         </div>
                     </div>
             </div>
-            <AreaContainer item={provinces} getCell={getCitys} show={showProvince}/>
-            <AreaContainer item={citys} getCell={getSubdistricts} show={showCitys}/>
+            <AreaContainer item={provinces} currentItem={currentProvince} getCell={getCitys} show={showProvince}/>
+            <AreaContainer item={citys} currentItem={currentCity} getCell={getSubdistricts} show={showCitys}/>
             <AreaContainer item={subdistricts} show={showSubdistricts}/>
         </div>
     }

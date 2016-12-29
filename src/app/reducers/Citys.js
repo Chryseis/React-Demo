@@ -9,7 +9,10 @@ const initialState={
     subdistricts:[],
     showPro:false,
     showCitys:true,
-    showSub:true
+    showSub:true,
+    currentPro:'',
+    currentCity:'',
+    currentSub:''
 }
 
 const reducersMap={
@@ -17,10 +20,17 @@ const reducersMap={
         return {provinces:action.area,showPro:false,showCitys:true,showSub:true}
     },
     [Action.GET_CITYS]:(state,action)=>{
-        return {citys:action.citys,showPro:true,showCitys:false,showSub:true}
+        return {citys:action.citys,showPro:true,showCitys:false,showSub:true,currentPro:action.currentPro}
     },
     [Action.GET_SUBDISTRICTS]:(state,action)=>{
-        return {subdistricts:action.subdistricts,showPro:true,showCitys:true,showSub:false}
+        return {subdistricts:action.subdistricts,showPro:true,showCitys:true,showSub:false,currentCity:action.currentCity}
+    },
+    [Action.CHANGE_TAB]:(state,action)=>{
+        switch(action.tab){
+            case 'provinces':return {showPro:false,showCitys:true,showSub:true};
+            case 'citys':return {showPro:true,showCitys:false,showSub:true};
+            case 'subdistricts':return {showPro:true,showCitys:true,showSub:false};
+        }
     }
 }
 
