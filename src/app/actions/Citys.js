@@ -14,16 +14,16 @@ export function getProvinces() {
     }
 }
 
-export function getCitys(province) {
+export function getCitys(citys) {
     return {
         type:Action.GET_CITYS,
-        province:province
+        citys:citys
     }
 }
 
-export function getSubdistricts(city) {
+export function getSubdistricts(subdistricts) {
     return {
         type:Action.GET_SUBDISTRICTS,
-        city:city
+        subdistricts:subdistricts
     }
 }

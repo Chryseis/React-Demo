@@ -1,0 +1,62 @@
+ul, li, div, p, * {
+    padding: 0;
+    margin: 0;
+    font-family: "Microsoft YaHei";
+}
+
+.clearfix:before, .clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    zoom: 1;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+.area-tools {
+    line-height: 30px;
+}
+
+a {
+    text-decoration: none;
+
+    out-line: none;
+}
+
+.area-tools li {
+    float: left;
+    padding: 0 5px;
+}
+
+.area-tools li:hover, .area-tools li.active {
+    background-color: #0099ff;
+    cursor: pointer;
+}
+
+.container {
+    width: 280px;
+}
+
+.container a {
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 5px;
+    margin: 0 2px;
+}
+
+.container a:hover, .container a.active {
+    background-color: #0099ff;
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
