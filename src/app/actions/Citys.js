@@ -37,6 +37,12 @@ export function getSubdistrictsName(currentSubdistricts) {
     }
 }
 
+export function showArea() {
+    return {
+        type:Action.SHOW_AREA
+    }
+}
+
 export function changeTab(tab) {
     return {
         type:Action.CHANGE_TAB,

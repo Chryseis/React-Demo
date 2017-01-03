@@ -10,6 +10,7 @@ const initialState={
     showPro:false,
     showCitys:true,
     showSub:true,
+    isHide:true,
     currentPro:'',
     currentCity:'',
     currentSub:''
@@ -26,7 +27,10 @@ const reducersMap={
         return {subdistricts:action.subdistricts,showPro:true,showCitys:true,showSub:false,currentCity:action.currentCity,currentSub:''}
     },
     [Action.GET_SUBDISTRICT_NAME]:(state,action)=>{
-        return {currentSub:action.currentSubdistricts}
+        return {currentSub:action.currentSubdistricts,isHide:true}
+    },
+    [Action.SHOW_AREA]:(state,action)=>{
+      return {isHide:false}
     },
     [Action.CHANGE_TAB]:(state,action)=>{
         switch(action.tab){
