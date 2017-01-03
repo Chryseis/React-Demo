@@ -14,7 +14,7 @@ export function getProvinces() {
     }
 }
 
-export function getCitys(citys,currentPro) {
+export function getCitys(currentPro,citys) {
     return {
         type:Action.GET_CITYS,
         citys:citys,
@@ -22,11 +22,18 @@ export function getCitys(citys,currentPro) {
     }
 }
 
-export function getSubdistricts(subdistricts,currentCity) {
+export function getSubdistricts(currentCity,subdistricts) {
     return {
         type:Action.GET_SUBDISTRICTS,
         subdistricts:subdistricts,
         currentCity:currentCity
+    }
+}
+
+export function getSubdistrictsName(currentSubdistricts) {
+    return {
+        type:Action.GET_SUBDISTRICT_NAME,
+        currentSubdistricts:currentSubdistricts
     }
 }
 

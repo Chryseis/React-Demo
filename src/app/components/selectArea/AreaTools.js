@@ -17,8 +17,9 @@ import * as Action from '../../actions/Citys';
     currentSubdistrict:state.citys.currentSub
 }),dispatch=>({
     getProvinces:()=>(dispatch(Action.getProvinces())),
-    getCitys:(citys,currentPro)=>(dispatch(Action.getCitys(citys,currentPro))),
-    getSubdistricts:(subdustricts,currentCity)=>(dispatch(Action.getSubdistricts(subdustricts,currentCity))),
+    getCitys:(currentPro,citys)=>(dispatch(Action.getCitys(currentPro,citys))),
+    getSubdistricts:(currentCity,subdustricts)=>(dispatch(Action.getSubdistricts(currentCity,subdustricts))),
+    getSubName:(currentSub)=>(dispatch(Action.getSubdistrictsName(currentSub))),
     changeTab:(tab)=>(dispatch(Action.changeTab(tab)))
 }))
 export default class AreaTools extends React.Component{
@@ -29,10 +30,10 @@ export default class AreaTools extends React.Component{
     }
 
     render(){
-        const {provinces,citys,subdistricts,getCitys,getSubdistricts,showProvince,showCitys,showSubdistricts,changeTab,currentProvince,currentCity,currentSubdistrict}=this.props;
+        const {provinces,citys,subdistricts,getCitys,getSubdistricts,getSubName,showProvince,showCitys,showSubdistricts,changeTab,currentProvince,currentCity,currentSubdistrict}=this.props;
         return <div style={{width: '800px',height: '600px',border: 'solid'}}>
             <div className="area-content">
-                <input type="text" style={{width:300}} />
+                <input type="text" style={{width:300}} value={this._showArea.call(this,currentProvince,currentCity,currentSubdistrict)} />
                     <div className="area-container">
                         <div className="area">
                             <ul className="area-tools clearfix">
@@ -45,7 +46,20 @@ export default class AreaTools extends React.Component{
             </div>
             <AreaContainer item={provinces} currentItem={currentProvince} getCell={getCitys} show={showProvince}/>
             <AreaContainer item={citys} currentItem={currentCity} getCell={getSubdistricts} show={showCitys}/>
-            <AreaContainer item={subdistricts} show={showSubdistricts}/>
+            <AreaContainer item={subdistricts} currentItem={currentSubdistrict} show={showSubdistricts} getCell={getSubName}/>
         </div>
+    }
+
+    _showArea(province,citys,subdistricts){
+        let area='';
+        if(subdistricts){
+            return `${province}\\${citys}\\${subdistricts}`
+        }
+        if(citys){
+            return `${province}\\${citys}`;
+        }
+        if(province){
+            return `${province}`;
+        }
     }
 }
