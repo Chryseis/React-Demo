@@ -21,7 +21,7 @@ const reducersMap={
         return {provinces:action.area,showPro:false,showCitys:true,showSub:true}
     },
     [Action.GET_CITYS]:(state,action)=>{
-        return {citys:action.citys,showPro:true,showCitys:false,showSub:true,currentPro:action.currentPro,currentCity:'',currentSub:''}
+        return {citys:action.citys,subdistricts:[],showPro:true,showCitys:false,showSub:true,currentPro:action.currentPro,currentCity:'',currentSub:''}
     },
     [Action.GET_SUBDISTRICTS]:(state,action)=>{
         return {subdistricts:action.subdistricts,showPro:true,showCitys:true,showSub:false,currentCity:action.currentCity,currentSub:''}

@@ -8,6 +8,7 @@ import SortableCancelOnDropOutside from '../components/dnd/index';
 import AreaTools from '../components/selectArea/AreaTools'
 import {Provider} from 'react-redux';
 import configureStore from '../store/configureStore'
+import FormsyForm from '../components/formsy/formsyForm'
 
 const store=configureStore();
 
@@ -18,6 +19,7 @@ export default class Root extends React.Component{
                 <Route path="hello" component={Hello}>
                     <Route path="demo" component={Demo}></Route>
                 </Route>
+                <Route path="formsyForm" component={FormsyForm}></Route>
                 <Route path="dnd" component={SortableCancelOnDropOutside}></Route>
                 <Route path="selectArea" component={AreaTools}></Route>
                 <Redirect from="/" to="/hello"/>

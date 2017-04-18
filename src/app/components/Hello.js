@@ -1,7 +1,7 @@
 /**
  * Created by AllenFeng on 2016/7/4.
  */
-import JsxComponents from'./test'
+import JsxComponents from'./test.jsx'
 
 export default class Hello extends React.Component {
 
@@ -9,7 +9,7 @@ export default class Hello extends React.Component {
         super(props);
         this.state={
             "Hello":"xixixi",
-            "World":"hahaha"
+            "World":"hah231312ha"
         }
     }
 

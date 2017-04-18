@@ -33,7 +33,7 @@ export default class AreaTools extends React.Component {
 
     render() {
         const {provinces, citys, subdistricts, getCitys, getSubdistricts, getSubName, showProvince, showCitys, showSubdistricts, changeTab, currentProvince, currentCity, currentSubdistrict,isHide,showArea}=this.props;
-        return <div style={{width: '800px',height: '600px',border: 'solid'}}>
+        return <div>
             <input type="text" style={{width:300}}
                    value={this._showArea.call(this,currentProvince,currentCity,currentSubdistrict)} onFocus={showArea}/>
             <div className={classnames({'area-content':true,'hide':isHide})}>

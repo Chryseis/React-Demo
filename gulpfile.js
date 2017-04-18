@@ -20,7 +20,7 @@ gulp.task('watch',function () {
 gulp.task('webpack',function () {
     return gulp.src('src/app/main.js')
         .pipe(webpackStream(config))
-        .pipe(gulp.dest('public/'))
+        // .pipe(gulp.dest('public/'))
 });
 
 gulp.task('webpack-publish',function () {

@@ -10,7 +10,8 @@ module.exports = {
     entry: [
         'whatwg-fetch',
         './src/app/main.js',
-        './src/styles/main.scss'
+        './src/styles/main.scss',
+        './src/styles/main.css'
     ],
     output: {
         path: path.resolve(__dirname, "assets"),
@@ -28,7 +29,7 @@ module.exports = {
             exclude: /node_modules/,
             loader: 'babel'
         }, {
-            test: /\.scss$/,
+            test: /\.(css|scss)$/,
             loader: ExtractTextPlugin.extract("style", "css!sass?sourceMap")
         }]
     },
